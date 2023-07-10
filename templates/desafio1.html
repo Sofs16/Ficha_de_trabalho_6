@@ -2,13 +2,13 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Desafio 2</title>
+    <title>Desafio 1</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
 </head>
 <body>
-    <h1>Desafio 2</h1>
-    <img src="{{ url_for('static', filename='Triangulo.jpg') }}" alt="Triangulo">
-    <p>Quantos triângulos consegues ver na imagem?</p>
+    <h1>Desafio 1</h1>
+    <img src="{{ url_for('static', filename='amigos.jpg') }}" alt="amigos" style="width: 300px; height: auto;">
+    <p>Quatro amigos se reuniram. A Clara tem a metade da idade do João mais 2 anos. O Martim tem 8 anos. O João tem a idade do Martim mais a metade de sua idade. A Ana tem a metade da idade da Clara mais a metade da idade do Martim. Qual dos amigos é o mais velho?</p>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
@@ -18,7 +18,7 @@
         {% endif %}
     {% endwith %}
 
-    <form method="POST" action="{{ url_for('desafio2') }}">
+    <form method="POST" action="{{ url_for('desafio1') }}">
         {{ form.hidden_tag() }}
         {{ form.resposta() }}
         {{ form.submit() }}

@@ -4,20 +4,21 @@ from forms import RespostaForm, MensagemForm
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'segredo'
 
-respostas = ['cem', 'avestruz', 'branco']
+respostas = ['Pedro', '27', 'Carlos']
 mensagens = []
 
 
 @app.route("/", methods=['GET', 'POST'])
-def home():
+
+@app.route("/desafio1", methods=['GET', 'POST'])
+def desafio1():
     form = RespostaForm()
     if form.validate_on_submit():
         if form.resposta.data.lower() == respostas[0]:
             return redirect(url_for('desafio2'))
         else:
             flash('Resposta incorreta. Tenta novamente.', 'error')
-    return render_template('home.html', form=form)
-
+    return render_template('desafio1.html', form=form)
 
 @app.route("/desafio2", methods=['GET', 'POST'])
 def desafio2():
