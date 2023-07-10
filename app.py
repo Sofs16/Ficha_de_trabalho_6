@@ -9,6 +9,8 @@ mensagens = []
 
 
 @app.route("/", methods=['GET', 'POST'])
+def home():
+    return render_template('home.html')
 
 @app.route("/desafio1", methods=['GET', 'POST'])
 def desafio1():

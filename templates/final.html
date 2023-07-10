@@ -2,13 +2,13 @@
 <html lang="pt">
 <head>
     <meta charset="UTF-8">
-    <title>Parabéns!</title>
+    <title>Ding-Ding-Ding-Ding!</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
 </head>
 <body>
-    <h1>Parabéns! Encontraste o Tesouro!</h1>
-    <img src="{{ url_for('static', filename='tesouro.jpg') }}" alt="Tesouro">
-    <p>Deixa uma mensagem para os futuros aventureiros!</p>
+    <h1>Parabéns! És um dos vencedores d'O Grande Desafio!</h1>
+    <img src="{{ url_for('static', filename='premio.gif') }}" alt="Premio">
+    <p>Como prémio pela tua genialidade, acabas-te de ganhar um passe para voltares ao trabalho! Que isto aqui não é para preguiçosos!</p>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}

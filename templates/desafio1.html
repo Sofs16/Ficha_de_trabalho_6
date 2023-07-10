@@ -7,8 +7,8 @@
 </head>
 <body>
     <h1>Desafio 1</h1>
-    <img src="{{ url_for('static', filename='amigos.jpg') }}" alt="amigos" style="width: 300px; height: auto;">
-    <p>Quatro amigos se reuniram. A Clara tem a metade da idade do João mais 2 anos. O Martim tem 8 anos. O João tem a idade do Martim mais a metade de sua idade. A Ana tem a metade da idade da Clara mais a metade da idade do Martim. Qual dos amigos é o mais velho?</p>
+    <img src="{{ url_for('static', filename='amigos.jpg') }}" alt="Amigos" style="width: 300px; height: auto;">
+    <p>Quatro amigos se reuniram. A Clara tem a metade da idade do Pedro mais 2 anos. O Martim tem 8 anos. O Pedro tem a idade do Martim mais a metade de sua idade. A Ana tem a metade da idade da Clara mais a metade da idade do Martim. Qual dos amigos é o mais velho?</p>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}

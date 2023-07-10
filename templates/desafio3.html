@@ -7,7 +7,29 @@
 </head>
 <body>
     <h1>Desafio 3</h1>
-    <p>Qual é o animal que pôe o maior ovo?</p>
+    <img src="{{ url_for('static', filename='psicopata.jpg') }}" alt="Psicopata" style="width: 300px; height: auto;">
+    <p>Quatro homens – Armando, Bernardo, Carlos e Daniel – foram raptados por um psicopata.
+
+        Quando acordaram, estavam enterrados em areia, apenas com a cabeça de fora.
+        
+        Em cada um deles foi posto um chapéu, azul ou vermelho.
+        
+        Armando tem um chapéu vermelho, está virado para a direita e só consegue ver um muro.
+    
+        Do outro lado do muro estão Bernardo com um chapéu azul, Carlos com um chapéu vermelho e Daniel com outro chapéu azul. Estão todos em fila virados para a parede. Deste modo:
+
+        1. Daniel consegue ver Bernardo e Carlos à sua frente e sabe que Armado está do outro lado da parede.
+        2. Carlos consegue ver Bernardo à sua frente. Sabe que Armando está do outro lado da parede e que Daniel está imediatamente atrás de Carlos.
+        3. Bernardo apenas consegue ver a parede, mas sabe que Carlos está atrás dele e que Daniel está atrás de Carlos.
+        4. Armando só consegue ver a parede e sabe que Bernardo, Carlos e Daniel estão do outro lado dela.
+    
+        O psicopata diz-lhes:
+        "Há dois chapéus vermelhos e dois chapéus azuis. Se algum de vós disser corretamente a cor do próprio chapéu, todos serão libertados. Se nenhum de vós acertar, todos vão ser mortos.
+
+         quatro homens não podem conversar entre eles, mas não podem virar a cabeça nem sequer olhar para cima.
+
+        Quem pode salvar os quatro homens?
+    </p>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}
@@ -17,7 +39,7 @@
         {% endif %}
     {% endwith %}
 
-    <form method="POST" action="{{ url_for('pista2') }}">
+    <form method="POST" action="{{ url_for('desafio3') }}">
         {{ form.hidden_tag() }}
         {{ form.resposta() }}
         {{ form.submit() }}
