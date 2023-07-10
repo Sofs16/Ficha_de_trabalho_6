@@ -52,7 +52,7 @@ def final():
         mensagens.append(mensagem)
         print(f'Mensagem recebida: {mensagem}') # Print da mensagem no terminal
         flash(f'Mensagem enviada com sucesso! Já existem {len(mensagens)} mensagem(s).', 'success')
-    return render_template('tesouro.html', form=form)
+    return render_template('final.html', form=form)
 
 
 @app.route("/mensagens")
