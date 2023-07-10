@@ -4,13 +4,14 @@ from forms import RespostaForm, MensagemForm
 app = Flask(__name__)
 app.config['SECRET_KEY'] = 'segredo'
 
-respostas = ['Pedro', '27', 'Carlos']
+respostas = ['pedro', '27', 'carlos']
 mensagens = []
 
 
 @app.route("/", methods=['GET', 'POST'])
 def home():
-    return render_template('home.html')
+    form = RespostaForm()
+    return render_template('home.html', form=form)
 
 @app.route("/desafio1", methods=['GET', 'POST'])
 def desafio1():
@@ -37,13 +38,12 @@ def desafio3():
     form = RespostaForm()
     if form.validate_on_submit():
         if form.resposta.data.lower() == respostas[2]:
-            return redirect(url_for('tesouro'))
+            return redirect(url_for('final'))
         else:
             flash('Resposta incorreta. Tenta novamente.', 'error')
-    return render_template('pista3.html', form=form)
+    return render_template('desafio3.html', form=form)
 
 @app.route("/final", methods=['GET', 'POST'])
-
 
 def final():
     form = MensagemForm()

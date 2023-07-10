@@ -9,16 +9,8 @@
 <body>
     <h1>Bem-vindo à página d'O Grande Desafio!</h1>
     <p>Vamos dar-te 3 desafios para testar a tua capacidade lógica. Se acertares em todas as respostas, terás uma surpresa no final! Preparada/o? </p>
-    <img src="{{ url_for('static', filename='ready.gif') }}" alt="Ready">
-    {% with messages = get_flashed_messages(with_categories=true) %}
-        {% if messages %}
-        {% for category, message in messages %}
-    <p style="color: {{ 'red' if category == 'error' else 'green' }}">{{ message }}</p>
-        {% endfor %}
-        {% endif %}
-    {% endwith %}
-
-    <button onclick="window.location.href = 'desafio1.html';">Let's go!</button>
+    <img src="{{ url_for('static', filename='ready.gif') }}" alt="Ready" height= "50">
+    <a href="{{url_for('desafio1')}}" >Let's go!</a>
 
 </body>
 
