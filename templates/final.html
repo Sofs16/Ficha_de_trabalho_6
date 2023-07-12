@@ -8,7 +8,11 @@
 <body>
     <h1>Parabéns! És um dos vencedores d'O Grande Desafio!</h1>
     <img src="{{ url_for('static', filename='premio.gif') }}" alt="Premio">
-    <p>Como prémio pela tua genialidade, acabas-te de ganhar um passe para voltares ao trabalho! Que isto aqui não é para preguiçosos!</p>
+    <p>Como prémio pela tua genialidade, acabas-te de ganhar um passe para voltares ao trabalho! Vai trabalhar malandro, que isto aqui não é para preguiçosos!
+        <br>
+        <br>
+        Queres deixar uma mensagem? Aproveita a caixinha abaixo!
+    </p>
 
     {% with messages = get_flashed_messages(with_categories=true) %}
         {% if messages %}

@@ -4,14 +4,32 @@
     <meta charset="UTF-8">
     <title>O Grande Desafio</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='estilos.css') }}">
+    <style>
+             .image-container {
+            overflow: auto;
+        }
+
+        .image-container img {
+            float: center;
+            margin-right: 20px;
+        }
+
+        .button {
+            clear: both;
+        }
+    </style>
 </head>
 
 <body>
-    <h1>Bem-vindo à página d'O Grande Desafio!</h1>
-    <p>Vamos dar-te 3 desafios para testar a tua capacidade lógica. Se acertares em todas as respostas, terás uma surpresa no final! Preparada/o? </p>
-    <img src="{{ url_for('static', filename='ready.gif') }}" alt="Ready" height= "50">
-    <a href="{{url_for('desafio1')}}" >Let's go!</a>
-
+    <div class="container">
+        <h1>Bem-vindo à página d'O Grande Desafio!</h1>
+        <div class="image-container">
+            <img src="{{ url_for('static', filename='ready.gif') }}" alt="Ready" style="width: 300px; height: auto;">
+        </div>
+        <p>Vamos dar-te 3 desafios para testar a tua capacidade lógica. Se acertares em todas as respostas, terás uma surpresa no final! Preparada/o? </p>
+        
+    </div>
+    <button class="button" onclick="location.href='{{url_for('desafio1')}}'">Let's go!</button>
 </body>
 
    </html>
